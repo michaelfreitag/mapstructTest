@@ -2,6 +2,7 @@ package mapstruct.mapper;
 
 import mapstruct.dto.UITaskListDto;
 import mapstruct.entity.Task;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.Mappings;
 
-@Mapper
+@Mapper(uses=StatusRepository.class)
 public interface TaskMapper {
 
     @Mappings({
@@ -20,10 +20,9 @@ public interface TaskMapper {
     UITaskListDto taskToUITaskListDto(Task task);
 
     @Mappings({
-            @Mapping(source = "taskId", target = "id"),
+            @Mapping(target = "id", ignore=true),
             @Mapping(source = "taskName", target = "name"),
-            //@Mapping(source = "taskStatusId", target = "status.id"), /* not work */
-            //@Mapping(source = "taskStatusName", target = "status.name") /* not work */
+            @Mapping(source = "taskStatusId", target = "status")
     })
     void updateTaskFromUITaskListDto(UITaskListDto uiTaskListDto, @MappingTarget Task task);
 }

@@ -24,5 +24,5 @@ public interface TaskMapper {
             //@Mapping(source = "taskStatusId", target = "status.id"), /* not work */
             //@Mapping(source = "taskStatusName", target = "status.name") /* not work */
     })
-    void updateTaskFromUITaskListDto(UITaskListDto carDto, @MappingTarget Task task);
+    void updateTaskFromUITaskListDto(UITaskListDto uiTaskListDto, @MappingTarget Task task);
 }

@@ -30,15 +30,15 @@ public class TaskMapperImpl implements TaskMapper {
 
 
     @Override
-    public void updateTaskFromUITaskListDto(UITaskListDto carDto, Task task)  {
-        if ( carDto == null ) {
+    public void updateTaskFromUITaskListDto(UITaskListDto uiTaskListDto, Task task)  {
+        if ( uiTaskListDto == null ) {
             return;
         }
 
 
 
-        task.setId( carDto.getTaskId() );
-        task.setName( carDto.getTaskName() );
+        task.setId( uiTaskListDto.getTaskId() );
+        task.setName(uiTaskListDto.getTaskName());
 
     }
 
